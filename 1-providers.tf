@@ -15,10 +15,22 @@ terraform {
       source = "hashicorp/google"
       version = ">= 6.20.0"
     }
+    google-beta = {
+      source = "hashicorp/google-beta"
+      version = ">= 4.64.0"
+    }
   }
 }
 
 provider "google" {
+  credentials = "${file("account.json")}"
+  project     = local.project_id
+  region      = local.region
+  zone        = local.zones[0]
+}
+
+# Used for VPC module
+provider "google-beta" {
   credentials = "${file("account.json")}"
   project     = local.project_id
   region      = local.region
