@@ -1,6 +1,6 @@
 locals {
   project_id = "chrome-lane-454119-a6"
-  region  = "europe-north2" # The cheapest region: https://cloudprice.net/gcp/regions
+  region  = "us-central1" # The cheapest region: https://cloudprice.net/gcp/regions
   zones    = ["${local.region}-a"]
   # zones    = [
   #   "${local.region}-a", "${local.region}-b", "${local.region}-c",
