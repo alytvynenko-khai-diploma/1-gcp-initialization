@@ -21,7 +21,7 @@ module "gke" {
   http_load_balancing = false
   network_policy = false
   horizontal_pod_autoscaling = false
-  enable_cost_allocation      = true
+  enable_cost_allocation      = false
   # enable_binary_authorization = false
   gcs_fuse_csi_driver         = true
   # fleet_project               = var.project_id
@@ -32,6 +32,7 @@ module "gke" {
   node_pools = [
     {
       name              = "pool-main"
+      # machine_type      = "e2-highcpu-8" # Details: https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard
       machine_type      = "e2-standard-4" # Details: https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard
       node_count        = 1
       autoscaling = false
