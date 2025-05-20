@@ -32,8 +32,8 @@ module "gke" {
   node_pools = [
     {
       name = "pool-main"
-      # machine_type      = "e2-highcpu-8" # Details: https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard
-      machine_type   = "e2-standard-4" # Details: https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard
+      # Details: https://cloud.google.com/compute/docs/general-purpose-machines#e2-standard
+      machine_type   = "e2-standard-8"
       node_count     = 1
       autoscaling    = false
       auto_repair    = false
